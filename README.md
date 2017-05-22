@@ -10,5 +10,5 @@ visit profiles of other Users, rate their photos or comment them.
 
 ### INSTRUCTIONS
   * Import Project To eclipse or NetBeans
-  * rUN Apache Server
+  * Run Apache Server
   * Visit tiv.html
