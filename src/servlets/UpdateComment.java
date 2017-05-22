@@ -1,0 +1,87 @@
+package servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
+
+import db.CommentDB;
+import model.Comment;
+import model.User;
+
+/**
+ * Servlet implementation class UpdateComment
+ */
+@WebServlet("/UpdateComment")
+@MultipartConfig
+public class UpdateComment extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("application/json");
+		System.out.println("==========UpdateComment==========");
+		if(request.getParameter("photoID") != null)
+		{
+	        // gets values of text fields
+			
+	        String userName = request.getParameter("userName");
+	        int ID = Integer.parseInt(request.getParameter("ID"));
+	        int photoID = Integer.parseInt(request.getParameter("photoID"));
+	        String timestamp = request.getParameter("timestamp");
+	        String comment = request.getParameter("comment");
+	        
+	        System.out.println("userName: "+userName);
+	        System.out.println("ID: "+ID);
+	        System.out.println("photoID: "+photoID);
+	        System.out.println("date: "+timestamp);
+	        System.out.println("comment: "+comment);
+	        
+	       
+	    	HttpSession session = request.getSession(true);
+			User user = (User)session.getAttribute("logUser");
+			System.out.println(user.getUserName());
+			
+			
+			Comment updatedComment = new Comment();		
+			updatedComment.setID(ID);
+			updatedComment.setUserName(request.getParameter("userName"));
+			updatedComment.setPhotoID(ID);
+			updatedComment.setTimestamp(timestamp);
+			updatedComment.setComment(comment);
+	        try {
+				CommentDB.updateComment(updatedComment);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        
+	        try (PrintWriter out = response.getWriter()) {
+	        	List<Comment> comments = null;
+				try {
+					comments = CommentDB.getComments(photoID);
+				} catch (NumberFormatException | ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				String json = new Gson().toJson(comments);
+				out.print(json);
+			}
+        }
+		else{
+			System.out.println("No photoID for that Comment Found");
+		}
+	
+	}
+}

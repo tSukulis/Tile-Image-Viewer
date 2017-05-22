@@ -1,0 +1,170 @@
+ <!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <!--  <meta http-equiv="Content-Security-Policy" content="	
+    script-src 'self' 'unsafe-inline'  http://localhost/ www.google-analytics.com ajax.googleapis.com  http://localhost/userFunc/ 
+               https://code.jquery.com/ https://maxcdn.bootstrapcdn.com;
+              img-src *; 
+              style-src 'self' 'unsafe-inline' http://localhost/ http://fonts.googleapis.com/ https://maxcdn.bootstrapcdn.com;">-->
+     
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Tile Image Viewer </title>
+      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    
+    <link rel="stylesheet" href="css/reg.css" id = "registerStyle">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/comment.css">
+    <link rel="stylesheet" href="css/rating.css">
+</head>
+
+<body onload="GetImageCollection(GetImageCollectionCallback)">
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                <a id="brand" class="navbar-brand " href="tiv.html">Tiv</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul id="navmarg" class="nav navbar-nav">
+                    <!--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
+                    <li><a id = "myHome" href="tiv.html">Home</a></li>
+                    <li><a href="#">About Tiv</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <a id="mySignIn"  onclick="showModal()">Sing In</a> </li>
+                    <li><a id="mySignUp" href="register.html">Sign Up</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!---bootstrap jumbotron-------->
+    <div class="jumbotron">
+        <div  class=" container-fluid">
+          <div class="row">
+              <div class="col-md-4 col-sm-2 col-lg-4 col-md-offset-4 col-lg-offset-4">
+                <h2>Create Your Own Gallery</h2>
+                <a href="register.html"><h3>Sign Up Now</h3></a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!------------------------------->
+
+    <!--------tile Container--------->
+    <div id = "tileContainer" class="container-fluid"></div>
+    <!------------------------------->
+    
+    
+    <!------Image Modal ----------
+        <div id="myCollectionModal" class="modal">
+            <span id = "MycollectionClose" class="close">
+             <span class="glyphicon-class"></span></span>
+            <div id="caption"></div>
+            <img id = "MyCollectionModalContent" class="modal-content" id="img01">--->
+            <!---exif Metadata------------
+            <section id="exif" class="exif"></section>-->
+            <!---Google Map-------------
+            <h2 id="mapTitle">This Image Captured:</h2>
+            <div id="map"></div>
+        </div>--->
+   <!------------------------------->
+    
+    
+    <!---The Modal ------------->
+    <div id="myModal" class="imageModal">
+      <div class="row myModalRowOffset">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-lg-offset-11 col-md-offset-11 col-sm-offset-11 myModalCloseRowOffset">
+        <span id = "collectionModalClose">×</span>
+        </div>
+      </div>
+        <div class="row myModalRowsLeftOffset">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <!--<div id="caption"></div>-->
+            <img id="img01">
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <section id = "metaData">
+            </section>
+            <section id="ratingSection"></section>
+            <h4 class = "comment" >Comments:  </h4> 
+            <hr class="commentHr">
+            <section id = "commentsSection">
+            </section>
+          </div>
+        </div>
+        <div class="row myModalRowsLeftOffset">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <!---Google Map---------------->
+            <h2 id = mapTitle>This Image Captured:</h2>
+            <div id="map"></div>
+          </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+            <!---exif Metadata-------------->
+            <section id="exif" ></section>
+          </div>
+       </div>
+    </div>
+    
+    <!--------ratingsModalSection------------>
+    <section id="ratingsModalSection"></section>
+    <!--------------------------------------->
+    
+    
+    
+    <!--------Login Modal------------>
+	<div id="id01" class="modal">
+		<div id="logmsg"> </div>
+			<form id="myRegModalContent" class="modal-content animate">
+				<div id="myRegModalContainer" class="container"><label><b>Username</b></label>
+					<input id="loginName" placeholder="Enter Username" name="uname"  type="text" required>
+					<label> <b>Password</b></label>
+					<input id="loginPsw" placeholder="Enter Password" name="psw"  type="password" required>
+					<button class="loginButton" type="submit" onclick="ValidateLogin(ValidateCallback);">Login</button>
+					<input checked="checked" type="checkbox"> Remember me
+			   </div>
+				<div id="myRegModalContainerBottom" class="container" style="background-color:#f1f1f1">
+					<button class="loginButton cancelbtn" type="button" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
+						<span id="myLog">Not a member? <a href="register.html">Sign Up</a></span>		
+				</div>
+			</form>
+	</div>
+	<!------------------------------->
+	
+    <!--<button class="loginButton cancelbtn" type="button" onclick="ratingsByphotoID.toString();">TEST</button>-->
+    <footer class="footer ">
+        <p><small>Copyright ©</small></p>
+        <!--small tag use -->
+    </footer>
+	
+	<script src="js/tivComment.js"></script>
+	<script src="js/tivRating.js"></script>
+	<script src="js/metaData.js"></script>
+    <script src="js/reg.js"></script>
+    <script src="js/exif.js"></script>
+    <script src="js/tiv.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQpn8CugNQm6Gu5kkRIqaRwvE76NwIndQ"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

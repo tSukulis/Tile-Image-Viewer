@@ -1,0 +1,620 @@
+/*=======================================
+    body
+=========================================*/
+
+body {
+    background-color: #d3d7cf;
+    padding-top: 50px;
+    /*padding top for fixed-topBar of bootstrap*/
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/*=======================================
+    box-border hover
+=========================================*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*=======================================
+    navBar
+=========================================*/
+
+#brand {
+    color: #fff;
+    font-size: 300%;
+}
+
+.navbar-custom {
+    background-color: #000;
+    border-radius: 0;
+}
+
+nav li {
+    font-size: 150%;
+    margin-right: 15px;
+}
+
+#navmarg {
+    margin-left: 80px;
+}
+
+#mySignIn {
+    margin-right: -10px;
+    cursor: pointer;
+}
+
+
+#userGlyphicon {
+    font-size: 70%;
+    cursor: pointer;
+}
+
+.navbar-custom .navbar-nav>li>a {
+    color: #fff;
+    border-right: solid 1px #357474;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: grey;
+}
+
+.navbar-custom .navbar-nav>.active>a, .navbar-nav>.active>a:focus {
+    color: #abd2c3;
+    background-color: transparent;
+}
+
+.navbar-custom .navbar-brand {
+    color: #eeeeee;
+}
+
+
+/*=====================================================
+    Moble And tablet media query (overrides bootstrap)
+======================================================*/
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
+    .navbar-custom .navbar-nav>li>a {
+        text-align: center;
+        color: #fff;
+        border-right: 0;
+        margin-right: 65px;
+        border-bottom: solid 1px #357474;
+    }
+
+    #myLog {
+    	margin-left: 13%;
+	}
+
+    .glyphicon {
+    font-size: 70%;
+    }
+    
+    #mySignUp {
+    	margin-left: 94px;
+    }
+    
+    #mySignIn {
+    margin-left: 94px;
+    margin-right: 64px;
+    cursor: pointer;
+}
+}
+
+
+/*=======================================
+    row-offset
+=========================================*/
+
+.top-offset {
+    margin-top: 8%;
+    position: relative;
+}
+
+/*=======================================
+    footer
+=========================================*/
+
+footer {
+    margin-top: 2%;
+    background-color: #000000;
+    color: grey;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+}
+
+
+
+#hdr{
+  float: left;
+  position: relative;
+  margin-top: 25px;
+  color: #e5e5e5;
+  margin-left: 2.5%;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+ /*=======================================
+    Sing Up
+=========================================*/
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
+	#myForm {
+    	margin-top: 559px;
+	}
+	
+	.rateFirst {
+    	width: 100%;
+	}
+	
+	#deletePhotobutton{
+	    height: 25px;
+	    width: 60%;
+	    background-color:tomato;
+	    border-radius: 0px;
+	    font-size: 12px;
+	    color:white;
+	    border: none !important;
+	    margin-left: -13%;
+	}
+}
+
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1918px){
+	
+	.rateFirst {
+    	width: 250%;
+	}
+	
+	#deletePhotobutton{
+	    height: 25px;
+	    width: 60%;
+	    background-color:tomato;
+	    border-radius: 0px;
+	    font-size: 12px;
+	    color:white;
+	    border: none !important;
+	    margin-left: -13%;
+	}
+}
+
+@media only screen and (min-device-width: 1920px) {
+	
+	.rateFirst {
+    	width: 150%;
+	}
+	
+	#deletePhotobutton {
+	    height: 25px;
+	    width: 50%;
+	    background-color: tomato;
+	    border-radius: 0px;
+	    font-size: 12px;
+	    color: white;
+	    border: none !important;
+	    margin-left: -43%;
+    }
+}
+
+    .register-form{
+    font-size: 16px;
+    left: 50%;
+    margin-top:350px;;
+    position: relative;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+
+btn.btn-default.regbutton {
+  width: 60%;
+}
+
+
+
+	.regbutton{
+	    height: 50px;
+	    width: 100%;
+	    background-color:tomato;
+	    border-radius: 0px;
+	    font-size: 18px;
+	    color:white;
+	    border: none !important;
+	    margin-bottom: 5px;
+	}
+	.regbutton:hover{
+	    color: white;
+	    background-color:#357474/*#aa422f*/;
+	}
+	.regbutton:active{
+	    color: white;
+	    background-color:#aa422f;
+	}
+	.logbutton{
+		position:relative;
+	    height: 50px;
+	    width: 200px;
+	    background-color:yellowgreen;
+	    border-radius: 0px;
+	    font-size: 18px;
+	    color:white;
+	    border: none !important;
+	    margin-bottom: 5px;
+	}
+	.logbutton:hover{
+	    color: white;
+	    background-color:darkolivegreen;
+	}
+	.logbutton:active{
+	    color: white;
+	    background-color:darkolivegreen;
+	}
+
+
+
+	.register-form label{
+	    color: #555;
+
+	}
+	.register-form input{
+	    margin-bottom: 5px;
+	    height: 40px;
+	    border-radius: 0px;
+	}
+
+	.form-control{
+		border: 1px solid #aaa;
+    border-radius: 0;
+    height: 40px;
+	}
+
+  #uName{
+    text-align: right;
+    position: relative;
+  }
+  
+  
+#buttonRating {
+    width: 50%;
+    height: 23px;
+}
+
+
+#VisitProfile:focus,
+#VisitProfile:hover {
+    color: #357474;
+    cursor: pointer;
+}
+
+#myHome{
+	cursor: pointer;
+}
+
+
+p{
+  font-size:12px;
+  color:#aa422f;
+}
+
+#info{
+  display: block;
+  width: 100%;
+}
+#rgs{
+  margin-left: 28%;
+
+  color:#357474;
+}
+
+#resp{
+	color: darkolivegreen;
+	border: solid 1px grey;
+}
+
+
+
+btn{
+  width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #666666 !important;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+#iman{
+	 margin-left: 28%;
+	margin-top: 10px;
+}
+
+#fail{
+	margin-left: 28%;
+	margin-top: 10px;
+}
+
+#ftr{
+	color:#d3d7cf;
+}
+
+
+
+ /*=======================================
+    closeModal
+=========================================*/
+#myPopUpModalClose{
+    float: right;
+    width: -4%;
+    margin-left: -69%;
+    font-weight: bold;
+    font-size: 38.5px;
+}
+
+/*=======================================
+    RegisterSuccessModal
+=========================================*/
+#mdlb
+{
+    color: #357474;
+    background-color: #c2d6d6;
+}
+
+#mdlc
+{
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    margin-top: 55px;
+    color: #357474;
+    border: solid 1px #bbb;
+}
+
+#mdlf
+{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    -moz-border-radius-bottomright: 6px;
+    color: #357474;
+    background-color: #c2d6d6;
+}
+
+#mdlh
+{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    -webkit-border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+    color: #ddd;
+    background-color: #85adad;
+}
+#closeModalbtn{
+	width: 15%;
+}
+
+
+.alert-warning {
+    color: #FFF;
+    background-color: #20202079;
+    border: 0;
+}
+
+#myLog {
+    margin-left: 72%;
+}
+
+/*=======================================
+    LoginModalModal
+=========================================*/
+#loginName[type=text], #loginPsw[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.loginButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+#id01 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+#myRegModalContent {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x)
+#closeModalbtn {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}*/
+
+#closeModalbtn:hover,
+#closeModalbtn:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+    
+    #myLog {
+    	margin-left: 0;
+	}
+}
+
+#myRegModalContainer,#myRegModalContainerBottom{
+	width: 80%;
+	background-color:#f1f1f1;
+}
+
+
+#menubtn {
+    margin-top: 13px;
+    background-color: inherit;
+}
+
+.glyphicon {
+    font-size: 150%;
+}
+
+.dropdown-menu {
+    width: 50%;
+}
+
+.topprof-offset{
+  margin-top: 15px;
+}
+
+
+#signout{
+	border-top-color: tomato;
+}
+
+.member{
+	background-color: inherit;
+	border: 1px solid #000020;
+}
+
+.list-group {
+    padding-left: 0;
+    margin-bottom: 20px;
+    margin-top: 6px;
+}
+
+.drpbtn{
+	cursor: pointer;
+}
+
+
+
+#focusare{
+  margin-bottom: 20px;
+  color:#357474;
+}
+
+#glyphiconUser{
+	font-size: 70%;
+}
+
+#logresp {
+    margin-left: 38%;
+}
+
+
+/*=======================================
+    radio Inline
+=========================================*/
+@media (max-width:768px) {
+    .radio-inline {
+        display: block;
+        min-height: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 20px;
+    }
+}
+@media (max-width:768px) {
+    .radio-inline+.radio-inline, .checkbox-inline+.checkbox-inline {
+        margin-top: auto;
+        margin-left: auto;
+    }
+}

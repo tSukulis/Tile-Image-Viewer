@@ -1,0 +1,152 @@
+/*====================================================
+*
+* Modal Rules
+*====================================================*/
+
+.imageModal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+
+
+#img01 {
+    width: 99%;
+    max-height: 620px;
+}
+
+.myModalRowLeftOffset {
+    margin-left: 1%;
+}
+
+#collectionModalClose {
+    color: #f1f1f1;
+    font-size: 50px;
+    margin-left: 50%;
+    cursor: pointer;
+}
+
+.myModalCloseRowOffset {
+    margin-top: -68px;
+}
+
+.myModalRowsLeftOffset {
+    margin-left: 10px;
+}
+
+#collectionModalClose:hover, #collectionModalClose:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#CommentArea {
+    width: 95%;
+}
+
+#PostCommentButton {
+    background-color: #484848;
+    color: #fff;
+    border-color: #484848;
+}
+
+
+#commentsSection{
+	max-height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+
+.commentHr {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #357474;
+    width: 95%;
+    margin-right: 10%;
+}
+
+.metaDataHr{
+	margin-top: 5px;
+    margin-bottom: 20px;
+    border: 0;
+    width: 95%;
+    margin-right: 10%;
+}
+
+.comment{
+   color: #eee;
+   margin-left: 2%;
+}
+
+.deleteComment {
+    margin-left: 2%;
+}
+
+.deleteComment:hover, .deleteComment:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#exif{
+	color: #e5e5e5;
+}
+#mapTitle{
+	color: #eee;
+}
+
+#map {
+  height:300px;
+}
+
+.trash{
+	color: #e5e5e5;
+	cursor: pointer;
+	font-size: 125%;
+	
+}
+
+.trash:hover{
+	color: #bbb;
+}
+
+
+@media only screen and (max-width: 700px) {
+    #collectionModalClose {
+        color: #f1f1f1;
+        font-size: 45px;
+        margin-left: 88%;
+        cursor: pointer;
+    }
+    #collectionModalClose:hover, #collectionModalClose:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .myModalRowsLeftOffset {
+       margin-left: -15px;
+}
+}

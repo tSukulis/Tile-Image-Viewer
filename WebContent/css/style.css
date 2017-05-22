@@ -1,0 +1,466 @@
+/*=======================================
+    body
+=========================================*/
+
+body {
+    background-color: #d3d7cf;
+    padding-top: 50px;
+    /*padding top for fixed-topBar of bootstrap*/
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+
+#tileContainer{
+	min-height: 200px;
+}
+/*=======================================
+    box-border hover
+=========================================*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*=====================================================
+    jumbotron padding
+======================================================*/
+
+.jumbotron {
+    padding-top: 0px;
+    padding-bottom: 15px;
+}
+
+
+/*=====================================================
+    Moble And tablet media query (overrides bootstrap)
+======================================================*/
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
+    .navbar-custom .navbar-nav>li>a {
+        text-align: center;
+        color: #fff;
+        border-right: 0;
+        margin-right: 65px;
+        border-bottom: solid 1px #357474;
+    }
+    #myCollectionClose {
+        position: relative;
+        top: 45px;
+        right: 35px;
+        color: #f8f8f8;
+        font-size: 50px;
+        font-weight: bold;
+        padding: -bottom: 550px;
+        transition: 0.3s;
+        opacity: 1;
+    }
+    
+    #imagesCollection {
+    	margin-top: 10px !important;
+	}	
+}
+
+
+/*=======================================
+    row-offset
+=========================================*/
+
+.top-offsetCol {
+    margin-top: 2%;
+}
+
+
+/*=======================================
+    figure - figcaption
+=========================================*/
+
+.tile {
+    margin-left: 5%;
+    text-align: center;
+    width: 90%;
+}
+
+figure {
+    position: relative;
+    text-align: center;
+    border: 1px solid #000;
+    margin: 2px;
+    /*margin padding and border of tile*/
+    padding: 2px;
+    max-width: 140px;
+    max-height: 140px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+figure img {
+    max-width: 100%;
+    display: block;
+    vertical-align: middle;
+}
+
+figure figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* fallback */
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#bb000000, endColorstr=#bb000000);
+    /* IE fix */
+    /* transparent background */
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    padding: 7px;
+    /* padding around text */
+    opacity: 0;
+}
+
+
+/*=======================================
+    hover__figure - figcaption
+=========================================*/
+
+figure:hover {
+    border: 1px solid #000;
+    border-radius: 5%;
+    /*-moz-box-shadow: 1px 2px 4px #000;
+    -webkit-box-shadow: 1px 2px 4px #000;*/
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 10px;
+    background: white;
+    -webkit-box-shadow: 5px 5px 5px #111;
+    box-shadow: 5px 5px 5px #111;
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    -o-transform: rotate(-8deg);
+    -ms-transform: rotate(-8deg);
+    transform: rotate(-8deg);
+    height: 5%;
+}
+
+figure:hover figcaption {
+    opacity: 1;
+}
+
+
+/*=======================================
+    footer
+=========================================*/
+
+footer {
+    margin-top: 2%;
+    background-color: #000000;
+    color: grey;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+}
+
+
+/*=======================================
+    create Modal
+=========================================*/
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {
+    opacity: 0.7;
+}
+
+
+/* The Modal (background) */
+
+#myCollectionModal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+     overflow-x: hidden;
+    overflow-y: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0,0,0,0.9);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content (image) */
+
+#MyCollectionModalContent {
+    width: 63%;
+    margin-left: 2.5%;
+    float: left;
+    position: relative;
+    text-align: center;
+    text-shadow: none;
+    background-color: #fefefe;
+    margin-bottom: 13px;
+    display:inline-block;
+}
+
+.exif {
+    width: 27%;
+	margin-right: 4.5%;
+    margin-top: 0;
+    float: right;
+    position: relative;
+    color: #e5e5e5;
+    display:inline-block;
+    font-size: 132%;
+}
+
+
+/* Caption of Modal Image */
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-style: italic;
+    color: #e5e5e5;
+    font-size: 120%;
+    float: left;
+    margin-top: -25px;
+    margin-bottom: 10px;
+    display:inline-block;
+}
+
+
+#collectionClose {
+    font-size: 18px;
+    /*opacity: 0; */
+}
+
+
+/* Add Animation */
+
+#MyCollectionModalContent, #caption, .exif {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+
+
+#myCollectionHdr{
+  float: left;
+  position: relative;
+  margin-top: 25px;
+  color: #e5e5e5;
+  margin-left: 2.5%;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+
+/* The Close Button */
+
+#myCollectionClose {
+    position: relative;
+    top: -45px;
+    right: 15px;
+    padding-bottom: 10%;
+    color: #f1f1f1;
+    font-size: 80px;
+    font-weight: bold;
+    transition: 0.3s;
+    opacity: 1;
+    color: #fff;
+    text-shadow: none;
+    display:inline-block;
+}
+
+
+.close{
+	position: relative;
+    top: -45px;
+    right: 15px;
+    padding-bottom: 10%;
+    color: #f1f1f1;
+    font-weight: normal;
+    transition: 0.3s;
+    opacity: 0.5;
+    color: #fff;
+    text-shadow: none;
+    font-size: 14.5px;
+    float: left;
+    display:inline-block;
+	
+}
+
+#myCollectionClose:hover, #myCollectionClose:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.close:hover, .close:focus{
+	color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.8;
+    text-shadow: none;
+}
+
+
+#glyph {
+    margin-left: 99%;
+    margin-top: 1%;
+}
+
+
+#imagesCollection {
+    margin-top: 20px;
+}
+
+/* imput stylesheet via labels */
+#fileButton,
+#uploadDone,
+#PhotosNumRequest{
+	display: none;
+}
+
+.custom-file-upload{
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.custom-done-upload{
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 6px 21px;
+    cursor: pointer;
+    margin-left: 18px;
+}
+
+.custom-numPhoto-upload{
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 2px 27px;
+    cursor: pointer;
+    margin-left: 18px;
+}
+
+
+/* 100% Image Width on Smaller Screens */
+
+@media only screen and (max-width: 700px) {
+    #MyCollectionModalContent {
+        margin-top: -5px;
+        margin-bottom: 15px;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        position: relative;
+        text-align: center;
+        text-shadow: none;
+    }
+    #myCollectionClose {
+        position: fixed;
+        top: 0;
+        right: 0;
+        color: #f1f1f1;
+        font-size: 0;
+        font-weight: bold;
+        transition: 0.3s;
+        visibility: hidden;
+        opacity: 1;
+    }
+    
+	#glyph {
+    	visibility: hidden;
+	}
+	
+    #caption {
+        margin: 0;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 0;
+        font-style: italic;
+        float: left;
+        margin-top: -25px;
+        visibility: hidden;
+		font-size: 100%;
+		margin-left: -28%;
+    }
+    .exif {
+        width: 93%;
+        margin-right: 2.5%;
+        margin-left: 6%;
+        margin-top: 2%;
+        float: none;
+        position: relative;
+        color: #fff;
+        font-size: 100%;
+    }
+
+    #map {
+      margin-top: 0;
+      margin-bottom: 15px;
+      margin-left: 8%;
+      width: 95%;
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+    }
+    
+    .myModalRowsLeftOffset {
+        margin-left: -15px;
+    }
+
+    #tileContainer{
+	min-height: 200px;
+}
+}

@@ -1,0 +1,171 @@
+.rating {
+    float: left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0, 0, 0, 0);
+}
+.rating:not(:checked)>label {
+    float: right;
+    width: 1em;
+    padding: 0 .1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    line-height: 1.2;
+    color: #ddd;
+    text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rating>input:checked~label {
+    color: #f70;
+    text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating:not(:checked)>label:hover, .rating:not(:checked)>label:hover~label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating>input:checked+label:hover, .rating>input:checked+label:hover~label, .rating>input:checked~label:hover, .rating>input:checked~label:hover~label, .rating>label:hover~input:checked~label {
+    color: #000;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating>label:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+#rateModal {
+    overflow-x: hidden;
+}
+#rateModalClose {
+    margin-left: 30%;
+    display: block;
+    cursor: pointer;
+    color: grey;
+}
+
+#rateModalClose:hover {
+    color: #f1f1f1;
+}
+
+.ratedStar {
+    color: #387a7a;
+    top: 10px;
+}
+
+.nonRatedStar {
+    color: #eee;
+    top: 10px;
+}
+
+.rateHr {
+    width: 30%;
+    margin-right: 37%;
+    border-top: dotted;
+}
+
+#YourRate {
+    color: #eee;
+    display: inline-block;
+}
+
+#fullRatings {
+    color: #eee;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#fullRatings:hover, #fullRatings:focus {
+    color: #387a7a;
+    text-decoration: none;
+}
+
+.userRate {
+    display: inline-block;
+    color: #eee;
+}
+
+.row.timeStamprowOffset {
+    margin-bottom: -20px;
+}
+
+.row.rateRowLeftMargin {
+    margin-left: 0;
+}
+
+.myRateModal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+
+#removeRate {
+    cursor: pointer;
+	color: grey;
+	top: 10px;
+	font-size: large;
+}
+
+#removeRate:hover,
+#removeRate:focus {
+    color: #eee;
+    font-size: initial;
+}
+
+abbr[title] {
+    cursor: pointer;
+    border-bottom: none;
+}
+
+
+@media screen and (max-width: 400px) {
+    .rateHr {
+        width: 90%;
+    }
+    #rateModalClose {
+        margin-left: 50%;
+        display: block;
+        cursor: pointer;
+    }
+    .row.timeStamprowOffset {
+        margin-bottom: -20px;
+        margin-top: 8px;
+    }
+    
+    #removeRate {
+    	margin-left: 20%;
+	}
+}
+
